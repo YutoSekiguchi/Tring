@@ -34,10 +34,8 @@ services:
       context: ./api
       dockerfile: prod.Dockerfile
     env_file: ./.env
-    volumes:
-      - ./api/:/app
     ports:
-      - 7121:9000
+      - 7121:3000
     depends_on:
       - mysql
     networks:
@@ -52,7 +50,7 @@ services:
     volumes:
       - ./client:/app
     ports:
-      - "7120:8080"
+      - "7120:80"
     depends_on:
       - api
     networks:

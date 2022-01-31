@@ -37,7 +37,7 @@ services:
     volumes:
       - ./api/:/app
     ports:
-      - 7121:9000
+      - 7121:3000
     depends_on:
       - mysql
     networks:

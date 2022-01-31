@@ -18,7 +18,7 @@ func InitRouter(db *gorm.DB) {
 	}))
 	e.Use(middleware.Recover())
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:8080", "http://localhost:7120"},
+		AllowOrigins: []string{"http://localhost:8080", "http://localhost:7120", "https://vps7.nkmr.io"},
 		AllowHeaders: []string{echo.HeaderAuthorization, echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))
 	ctrl := controller.NewController(db)
@@ -44,5 +44,5 @@ func InitRouter(db *gorm.DB) {
 		time.DELETE("/usertime/delete/:uid", ctrl.HandleDeleteTimeByUID)
 	}
 
-	e.Logger.Fatal(e.Start(":9000"))
+	e.Logger.Fatal(e.Start(":3000"))
 }
