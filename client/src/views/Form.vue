@@ -13,6 +13,8 @@
           <v-text-field
             v-model="userName"
             label="ex. 山田花子"
+            autofocus
+            @keyup.enter="moveNowPage()"
           ></v-text-field>
         </v-card-text>
         <v-card-actions>
@@ -35,7 +37,7 @@
       </v-card>
     </v-dialog>
 
-    <h1 class="font-weight-bold" style="font-size: 12rem;" align="center">TRing</h1>
+    <h1 class="font-weight-bold" style="font-size: 12rem; color: #92CBDD;" align="center"><span style="color: #F8BA60;">T</span>Ring</h1>
 
     <div style="background-color: rgb(245, 245, 255);" class="mt-12">
       <v-row>
@@ -48,6 +50,8 @@
             type="number"
             label="休憩時間を入力"
             class="num-form"
+            autofocus
+            @keyup.enter="onSubmit()"
           ></v-text-field>
         </v-col>
         <v-col cols="4"></v-col>
@@ -56,7 +60,7 @@
             color="blue-grey darken-2"
             @click="onSubmit()"
           >
-            <p class="pt-4" style="color: white;">確定</p>
+            <p class="mt-2" style="color: white;">Enter</p>
           </v-btn>
         </v-col>
       </v-row>

@@ -34,3 +34,16 @@ func (ctrl Controller) HandlePostUser(c echo.Context) error {
 		return c.JSON(200, p)
 	}
 }
+
+// HandleUpdateUser PUT /users/update/:id ユーザの追加
+func (ctrl Controller) HandleUpdateUser(c echo.Context) error {
+	var s service.UserService
+	p, err := s.UpdateUser(ctrl.Db, c)
+
+	if err != nil {
+		fmt.Println(err)
+		return c.JSON(http.StatusNotFound, err.Error())
+	} else {
+		return c.JSON(200, p)
+	}
+}

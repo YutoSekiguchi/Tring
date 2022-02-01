@@ -29,3 +29,20 @@ func (s UserService) PostUser(db *gorm.DB, c echo.Context) (User, error) {
 	}
 	return user, nil
 }
+
+// PUT
+// ユーザ編集
+func (s UserService) UpdateUser(db *gorm.DB, c echo.Context) (User, error) {
+	var u User
+	id := c.Param("id")
+
+	if err := db.Where("id = ?", id).First(&u).Error; err != nil {
+		return u, err
+	}
+	if err := c.Bind(&u); err != nil {
+		return u, err
+	}
+	db.Save(&u)
+
+	return u, nil
+}

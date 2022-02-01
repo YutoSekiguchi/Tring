@@ -4,6 +4,7 @@
       <v-col v-for="n in timesList.length" :key="n" cols="12" sm="6" md="4" lg="3">
         <Timer 
           :timeId="timesList[n-1].ID"
+          :uid="timesList[n-1].UID"
           :name="timesList[n-1].Name" 
           :time="timesList[n-1].Time" 
           :color="colorsList[n-1 % 8]"

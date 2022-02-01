@@ -32,6 +32,7 @@ func InitRouter(db *gorm.DB) {
 	{
 		user.GET("/card/:card", ctrl.HandleGetUserByCard)
 		user.POST("", ctrl.HandlePostUser)
+		user.PUT("/update/:id", ctrl.HandleUpdateUser)
 	}
 
 	// Time

@@ -7,7 +7,7 @@
       <div class="d-flex align-center">
         <router-link to="/" style="text-decoration: none; color: white;">
           <v-row>
-            <v-img class="mr-2 ml-16" src="./assets/header-logo.png" width="37px"></v-img>
+            <v-img class="mr-2 ml-16" src="./assets/logo-2.png" width="42px"></v-img>
             <h2>TRing</h2>
           </v-row>
         </router-link>
