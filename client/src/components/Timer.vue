@@ -59,7 +59,7 @@
           <v-btn
             color="error"
             dark
-            @click="deleteTime(timeId)"
+            @click="changeName(uid)"
           >
             ENTER
           </v-btn>
